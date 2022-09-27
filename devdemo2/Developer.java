@@ -7,12 +7,17 @@ public class Developer {
     private double hoursOfSleep;
     private ArrayList<String> languages;
     private ArrayList<Project> projects;
+    private static int devCount;
+    private static int totalYearsOfExp;
+    private static int totalProjects;
 
     //constructor
     public Developer() {
         this.name = "somebody";
         this.languages = new ArrayList<String>();
         this.projects = new ArrayList<Project>();
+        devCount++;
+        
     }
 
     public Developer(String name, int yearsOfExp, double hoursOfSleep) {
@@ -21,6 +26,8 @@ public class Developer {
         this.hoursOfSleep = hoursOfSleep;
         this.languages = new ArrayList<String>();
         this.projects = new ArrayList<Project>();
+        devCount++;
+        totalYearsOfExp += yearsOfExp; 
     }
 
     //methods
@@ -33,6 +40,20 @@ public class Developer {
         for(Project eachProject: this.projects) {
             eachProject.displayInfo();
         }
+    }
+
+    //Getters and Setters
+
+    public static int getTotalProjects() {
+        return totalProjects;
+    }
+
+    public static int getTotalYearsofExp() {
+        return Developer.totalYearsOfExp;
+    }
+
+    public static int getDevCount() {
+        return Developer.devCount;
     }
 
     public void addProject(Project project) {
@@ -71,10 +92,12 @@ public class Developer {
     //setter
     public Developer setOneProject(Project project) {
         this.projects.add(project);
+        totalProjects++;
         return this;
     }
 
     public Developer setProjects(ArrayList<Project> projects) {
+        totalProjects += projects.size();
         this.projects = projects;
         return this;
     }

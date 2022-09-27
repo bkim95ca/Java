@@ -3,6 +3,7 @@ public class DevTest {
     public static void main(String[] args){
         Developer dev1 = new Developer();
         Developer dev2 = new Developer("Bobby", 2, 12.5);
+        Developer dev3 = new Developer("Martha", 30, 40);
         dev1.displayStatus();
         System.out.println("***********************\n");
         dev2.displayStatus();
@@ -19,5 +20,8 @@ public class DevTest {
         dev2.setOneProject(project1);
         dev2.setOneProject(project2);
         dev2.displayStatus();
+
+        System.out.println(Developer.getDevCount());
+        System.out.println(Developer.getTotalYearsofExp());
     }
 }
