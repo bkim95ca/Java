@@ -6,7 +6,8 @@ public class TestOrders {
     
         // Order variables -- order1, order2 etc.
         Order order1 = new Order("Cindhuri", 4.5, true); 
-        Order order2 = new Order("Jimmy", 4.5, true); 
+        Order order2 = new Order();
+        order2.name = "Cindhuri"; 
         Order order3 = new Order("Noah", 4.5, true); 
         Order order4 = new Order("Sam", 4.5, true); 
         Item item1 = new Item("mocha", 4.5);

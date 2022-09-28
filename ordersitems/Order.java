@@ -6,6 +6,11 @@ public class Order {
     private boolean ready;
     private ArrayList<Item> items;
 
+    public Order() {
+        this.name = "somebody";
+        this.items = new ArrayList<Item>();
+    }
+
     public Order(String name, double total, boolean ready) {
         this.name = name;
         this.total = total;
